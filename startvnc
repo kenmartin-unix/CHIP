@@ -1,0 +1,8 @@
+echo " "
+echo "Stopping if running and starting vncserver"
+echo " "
+export DISPLAY=:1
+vncserver -kill :1
+vncserver -depth 24 -geometry 1280x600 -name "C.H.I.P." :1
+# autocutsel &
+
