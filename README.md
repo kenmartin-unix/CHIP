@@ -7,9 +7,13 @@ focal and bwbasic are binary executable files.
 The 'tar' files should be brought down and untarred using
 
 tar -xvf filename.tar
+
 cd filename
+
 make
+
 make install
+
 
 If you want the source code and documentation and examples. If
 you only want to execute the programs bring down the binary files.
