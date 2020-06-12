@@ -12,7 +12,7 @@ cd filename
 
 make
 
-make install
+sudo make install
 
 
 If you want the source code and documentation and examples. If
