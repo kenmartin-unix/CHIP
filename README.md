@@ -2,7 +2,7 @@
 
 This repository is dedicated to the C.H.I.P. from Next Thing.
 
-focal and bwbasic-3.20b are binary executable files.
+focal and bwbasic are binary executable files.
 
 The 'tar' files should be brought down and untarred using
 
