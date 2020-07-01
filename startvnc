@@ -1,8 +1,22 @@
+# 06-30-2020 KM
+# Be sure to apt-get install tightvncserver, openbox, autocutsel on the C.H.I.P.
+# The sleep's are intentional 
+# Best results with Real VNC Viewer on P.C. On P.C. setup as IP-Address:1
+# As configured Display 1 is setup
 echo " "
 echo "Stopping if running and starting vncserver"
 echo " "
 export DISPLAY=:1
+killall openbox
+killall autocutsel
+killall xscreensaver
 vncserver -kill :1
+echo " "
 vncserver -depth 24 -geometry 1280x600 -name "C.H.I.P." :1
-# autocutsel &
+openbox --replace &
+autocutsel -v -f
+sleep 2
+killall xscreensaver
+sleep 3
+date
 
