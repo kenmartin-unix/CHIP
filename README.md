@@ -22,6 +22,6 @@ In the folder you will find DOC's and Example programs.
 
 The file startvnc is a simple script if you use VNC. It will
 fire it up. If it was already running it will be restarted.
-From the P.C./MAC side fire up the vncviewer and set the 
+From the P.C./MAC side fire up the Real VNC viewer and set the 
 address to  ip-address:1
 
