@@ -1,0 +1,46 @@
+#! /bin/sh
+# wlan_pwr -- version: "11-Apr-2020"
+# Tested on Debian 8.3 and Debian 8.11
+# Improve CHIP's wireless performance by turning off power management.
+
+set -e
+
+# Log settings new
+echo "wlan_pwr: IFACE $IFACE, MODE $MODE, ADDRFAM $ADDRFAM"
+
+# Don't bother for loopback
+if [ "$IFACE" = lo ]; then
+	exit 0
+fi
+
+# Only run from ifup.
+if [ "$MODE" != start ]; then
+	exit 0
+fi
+
+# old off
+# Only do it once (skip for inet6).
+# if [ "$ADDRFAM" != inet ]; then
+#	exit 0
+# fi
+
+# Hopefully wireless-tools is installed
+if [ ! -x /sbin/iw ]; then
+	exit 0
+fi
+
+# New
+# The IFACE argument is not passed
+# /sbin/iw dev $IFACE set power_save off
+# Insert run through available wlans
+echo "wlan_pwr: Setting power saving to off"
+for wifi in `ip a | grep wlan | cut -f2 -d ' ' | sed "s/://"`
+        do
+        echo "wlan_pwr: Power save to off for $wifi"
+        /sbin/iw dev $wifi set power_save off
+        echo -n "wlan_pwr: $wifi is set to "
+        /sbin/iw dev $wifi get power_save
+        done
+
+exit 0
+
