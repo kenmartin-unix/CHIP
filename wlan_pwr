@@ -1,6 +1,6 @@
 #! /bin/sh
 # wlan_pwr -- version: "11-Apr-2020"
-# Tested on Debian 8.3 and Debian 8.11
+# Tested on Debian 8.11
 # Improve CHIP's wireless performance by turning off power management.
 
 set -e
