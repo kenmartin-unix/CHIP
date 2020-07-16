@@ -25,3 +25,5 @@ fire it up. If it was already running it will be restarted.
 From the P.C./MAC side fire up the Real VNC viewer and set the 
 address to  ip-address:1
 
+wlan_pwr that work on the C.H.I.P. with Desian 8.11.
+
